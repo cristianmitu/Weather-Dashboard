@@ -2,6 +2,8 @@ let searchInput = document.querySelector("#search-input");  //user search input
 let searchBtn = document.querySelector("#search-button");
 let historyBtns = document.querySelector("#history"); //history of user search input create a btn for each search
 let searchedCity = "";
+let newCityHistory;
+let cityHistory = [];
 // console.log(searchedCity);
 let iconSRC = " http://openweathermap.org/img/wn/10d@2x.png"; // ${iconCode}
 
@@ -31,5 +33,14 @@ searchBtn.addEventListener("click", function(event){
 .then (Response => Response.json())
 .then (city =>{
     console.log(city);
+    newCityHistory = city;
+    console.log(newCityHistory);
+    cityHitory = cityHistory.push(newCityHistory);
+    if (cityHistory.length < 5) {
+        cityHistory.shift();
+    }
+    console.log(cityHistory);
+
+
 })
 });
