@@ -36,7 +36,7 @@ searchBtn.addEventListener("click", function(event){
     newCityHistory = city;
     console.log(newCityHistory);
     cityHitory = cityHistory.push(newCityHistory);
-    if (cityHistory.length < 5) {
+    if (cityHistory.length > 5) {
         cityHistory.shift();
     }
     console.log(cityHistory);
@@ -44,3 +44,44 @@ searchBtn.addEventListener("click", function(event){
 
 })
 });
+
+
+
+
+// signUpButton.addEventListener("click", function(event) {
+//     event.preventDefault();
+    
+//     // create user object from submission
+//     var user = {
+//       firstName: firstNameInput.value.trim(),
+//       lastName: lastNameInput.value.trim(),
+//       email: emailInput.value.trim(),
+//       password: passwordInput.value.trim()
+//     };
+  
+//     console.log(user);
+    
+//     // validate the fields
+//     if (user.firstName === "") {
+//       displayMessage("error", "First name cannot be blank");
+//     } else if (user.lastName === "") {
+//       displayMessage("error", "Last name cannot be blank");
+//     } else if (user.email === "") {
+//       displayMessage("error", "Email cannot be blank");
+//     } else if (user.password === "") {
+//       displayMessage("error", "Password cannot be blank");
+//     } else {
+//       displayMessage("success", "Registered successfully");
+  
+//       // set new submission
+//       localStorage.setItem("user", JSON.stringify(user));
+      
+//       // get most recent submission
+//       var lastUser = JSON.parse(localStorage.getItem("user"));
+//       userFirstNameSpan.textContent = lastUser.firstName;
+//       userLastNameSpan.textContent = lastUser.lastName;
+//       userEmailSpan.textContent = lastUser.email;
+//       userPasswordSpan.textContent = lastUser.password;
+//     }
+//   });
+  
